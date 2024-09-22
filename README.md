@@ -17,9 +17,7 @@ Table of Contents
 *   [Technologies Used](#technologies-used)
     
 *   [Project Structure](#project-structure)
-    
-*   [Contributing](#contributing)
-    
+     
 *   [License](#license)
     
 *   [Acknowledgements](#acknowledgements)
@@ -55,23 +53,46 @@ Installation
 
 ### Steps
 
-1.  bashCopy codegit clone https://github.com/yourusername/lexiland.git
+1.  **Clone the Repository**
+```bash
+git clone https://github.com/Brahim07-esprit/Lexiland.git
+```
     
-2.  bashCopy codecd lexiland
+2.  **Navigate to the Project Directory
+```bash
+cd lexiland
+```
     
-3.  bashCopy codepython3.11 -m venv venv
+3.  **Create a Virtual Environment** 
+```bash
+python3.11 -m venv lexiland-env
+```
     
 4.  **Activate the Virtual Environment**
     
-    *   bashCopy codevenv\\Scripts\\activate
+    *   on Windows:
+        ```bash
+        lexiland-env\Scripts\activate
+        ```
         
-    *   bashCopy codesource venv/bin/activate
+    *   on macOS/Linux:
+        ```bash
+        source lexiland-env\bin\activate
+        ```
         
-5.  bashCopy codepip install -r requirements.txt**Contents of requirements.txt:**Copy codedjangochannelstransformersnltkbs4pillowgoogletransopencv-pythoninferencesetuptoolswheelnumpytensorflowultralyticsmltu
+5.  **Install Dependencies**
+```bash
+pip install -r requirements.txt
+```
+6.  **Apply Migrations**
+```bash
+python manage.py migrate
+```
     
-6.  bashCopy codepython manage.py migrate
-    
-7.  bashCopy codepython manage.py runserver
+7.  **Run Server**
+```bash
+python manage.py runserver
+```
     
 
 Usage
@@ -115,25 +136,25 @@ Technologies Used
 Project Structure
 -----------------
 
-Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   Copy codelexiland/  ├── avatar/  │   ├── answers/  │   ├── documents/  │   └── node_modules/  ├── avatar_image/  ├── avatar_videos/  ├── lexiland/  │   ├── settings.py  │   ├── urls.py  │   └── wsgi.py  ├── media/  │   └── images/  ├── templates/  │   ├── assets/  │   └── forms/  └── Webpage/   `
-
-_Note: This is a simplified version. Replace it with your actual project structure if different._
-
-Contributing
-------------
-
-Contributions are welcome! Please follow these steps:
-
-1.  **Fork the Repository**
-    
-2.  bashCopy codegit checkout -b feature/YourFeature
-    
-3.  bashCopy codegit commit -m "Add some feature"
-    
-4.  bashCopy codegit push origin feature/YourFeature
-    
-5.  **Open a Pull Request**
-    
+```bash
+lexiland/
+├── avatar/
+│   ├── answers/
+│   ├── documents/
+│   └── node_modules/
+├── avatar_image/
+├── avatar_videos/
+├── lexiland/
+│   ├── settings.py
+│   ├── urls.py
+│   └── wsgi.py
+├── media/
+│   └── images/
+├── templates/
+│   ├── assets/
+│   └── forms/
+└── Webpage/
+```    
 
 License
 -------
