@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Left-Right Test</title>
+</head>
+    <h1>Dyscalculia Test</h1>
+    <p>Which of the following numbers corresponds to "seven?" <br>
+    A. 2  B. 17 C. 7  D. 8</p>
+    <input type="text" id="user1"/><br>
+    <p>Which of the following numbers corresponds to "seventeen?" <br>
+    A. 2  B. 17 C. 7  D. 8</p>
+    <input type="text" id="user2"/><br>
+    <p>True or false: 19<17 <br>
+    T. True  F.False</p>
+    <input type="text" id="user3"/><br>
+    <p>Which of the following numbers corresponds to "eight?" <br>
+    A. 2  B. 17 C. 7  D. 8</p>
+    <input type="text" id="user4"/><br>
+    <p>True or false: 9<20 <br>
+    T. True  F. False</p>
+    <input type="text" id="user5"/><br>
+    <p>1, 6, 4, 17, 9 - Arrange this series of numbers from least to greatest.</p>
+    <input type="text" id="user6"/><br>
+    <p>How many cookies are in this picture?</p>
+    <img src="../cookies.png" style="width:300px;height:300px;"><br>
+    <input type="text" id="user7"/><br>
+    <p>List the numbers between 5 and 8, exclusive.</p>
+    <input type="text" id="user8"/><br>
+    <p>1, 6, 4, 17, 9 - Arrange this series of numbers from greatest to least.</p>
+    <input type="text" id="user9"/><br>
+    <p>Starting from zero, what numbers are less than 7?</p>
+    <input type="text" id="user10"/><br>
+    <p>List the numbers between 10 and 20 (including 10 and 20).</p>
+    <input type="text" id="user11"/><br>
+    <p>How many tennis rackets are in this picture?</p>
+    <img src="../rackets.png" style="width:300px;height:300px;"><br>
+    <input type="text" id="user12"/><br>
+    <p>How many apples are in this picture?</p>
+    <img src="../apples.png" style="width:300px;height:300px;"><br>
+    <input type="text" id="user13"/><br>
+    <p>How many trees are in this picture?</p>
+    <img src="../trees.png" style="width:300px;height:300px;"><br>
+    <input type="text" id="user14"/><br>
+    <p>Which of the following numbers corresponds to "ten?" <br>
+    A. 10 B. 17 C. 7  D. 8 </p>
+    <input type="text" id="user15" /><br>
+    <p>Count from 1 to 10, with a space differentiating each number. </p>
+    <input type="text" id="user16" /><br>
+    <input type="submit" text="Submit" onclick="check()">
+
+    <script>
+        var correct = 0;
+        arr = [1, 1, 1, 1, 1, 1, 1.5, 1.5, 1, 1, 1, 1, 1, 2, 1, 1]
+        function figure(inp, corr, num) {
+            var user = document.getElementById(inp).value;
+            user = user.toLowerCase();
+            if (user == corr) {
+                correct += num;
+            }
+        }
+
+        function check() {
+            figure("user1", "c", arr[0]);
+            figure("user2", "b", arr[1]);
+            figure("user3", "f", arr[2]);
+            figure("user4", "d", arr[3]);
+            figure("user5", "t", arr[4]);
+            figure("user6", "1 4 6 9 17", arr[5]);
+            figure("user7", "3", arr[6]);
+            figure("user8", "6 7", arr[7]);
+            figure("user9", "17 9 6 4 1", arr[8]);
+            figure("user10", "0 1 2 3 4 5 6", arr[9]);
+            figure("user11", "10 11 12 13 14 15 16 17 18 19 20", arr[10]);
+            figure("user12", "4", arr[11]);
+            figure("user13", "7", arr[12]);
+            figure("user14", "a", arr[13]);
+            figure("user15", "9", arr[14]);
+            figure("user16", "1 2 3 4 5 6 7 8 9 10", arr[15]);
+            var percentage = (correct/16.0) * 100;
+            document.writeln(correct);
+            document.writeln(percentage + "%");
+        }
+    </script>
+</body>
+</html>

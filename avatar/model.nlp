@@ -1,0 +1,486 @@
+{
+  "settings": {
+    "languages": [
+      "en"
+    ],
+    "tag": "nlp",
+    "threshold": 0.5,
+    "autoLoad": true,
+    "autoSave": true,
+    "modelFileName": "model.nlp",
+    "executeActionsBeforeAnswers": false,
+    "calculateSentiment": true
+  },
+  "nluManager": {
+    "settings": {
+      "tag": "nlu-manager"
+    },
+    "locales": [
+      "en"
+    ],
+    "languageNames": {},
+    "domainManagers": {
+      "en": {
+        "settings": {
+          "locale": "en",
+          "trainByDomain": false,
+          "tag": "domain-manager-en",
+          "nluByDomain": {
+            "default": {
+              "className": "NeuralNlu",
+              "settings": {}
+            }
+          },
+          "useStemDict": true
+        },
+        "stemDict": {
+          "are,for,juri,lexia,lexiland,our,present,project,the,today,we": {
+            "intent": "bleda",
+            "domain": "default"
+          },
+          "hello,lexia": {
+            "intent": "greetings_for_me",
+            "domain": "default"
+          },
+          "can,for,good,juri,look,pleas,present,the,veri,yes,you,yourself": {
+            "intent": "greetings",
+            "domain": "default"
+          },
+          "anyth,do,have,juri,lexia,say,the,to,you": {
+            "intent": "grateful",
+            "domain": "default"
+          }
+        },
+        "intentDict": {
+          "bleda": "default",
+          "greetings_for_me": "default",
+          "greetings": "default",
+          "grateful": "default"
+        },
+        "sentences": [
+          {
+            "domain": "default",
+            "utterance": "Lexia we're presenting our LexiLand project today for the jury",
+            "intent": "bleda"
+          },
+          {
+            "domain": "default",
+            "utterance": "Hello Lexia",
+            "intent": "greetings_for_me"
+          },
+          {
+            "domain": "default",
+            "utterance": "Yes yes, you look very good! can you please present yourself for the jury?",
+            "intent": "greetings"
+          },
+          {
+            "domain": "default",
+            "utterance": "Lexia, do you have anything to say to the jury?",
+            "intent": "grateful"
+          }
+        ],
+        "domains": {
+          "master_domain": {
+            "settings": {
+              "locale": "en",
+              "tag": "nlu-en",
+              "keepStopwords": true,
+              "nonefeatureValue": 1,
+              "nonedeltaMultiplier": 1.2,
+              "spellCheck": false,
+              "spellCheckDistance": 1,
+              "filterZeros": true,
+              "log": true
+            },
+            "features": {
+              "lexia": 1,
+              "we": 1,
+              "are": 1,
+              "present": 1,
+              "our": 1,
+              "lexiland": 1,
+              "project": 1,
+              "today": 1,
+              "for": 1,
+              "the": 1,
+              "juri": 1,
+              "hello": 1,
+              "yes": 1,
+              "you": 1,
+              "look": 1,
+              "veri": 1,
+              "good": 1,
+              "can": 1,
+              "pleas": 1,
+              "yourself": 1,
+              "do": 1,
+              "have": 1,
+              "anyth": 1,
+              "to": 1,
+              "say": 1
+            },
+            "intents": {
+              "bleda": 1,
+              "greetings_for_me": 1,
+              "greetings": 1,
+              "grateful": 1
+            },
+            "intentFeatures": {
+              "bleda": {
+                "lexia": 1,
+                "we": 1,
+                "are": 1,
+                "present": 1,
+                "our": 1,
+                "lexiland": 1,
+                "project": 1,
+                "today": 1,
+                "for": 1,
+                "the": 1,
+                "juri": 1
+              },
+              "greetings_for_me": {
+                "hello": 1,
+                "lexia": 1
+              },
+              "greetings": {
+                "yes": 1,
+                "you": 1,
+                "look": 1,
+                "veri": 1,
+                "good": 1,
+                "can": 1,
+                "pleas": 1,
+                "present": 1,
+                "yourself": 1,
+                "for": 1,
+                "the": 1,
+                "juri": 1
+              },
+              "grateful": {
+                "lexia": 1,
+                "do": 1,
+                "you": 1,
+                "have": 1,
+                "anyth": 1,
+                "to": 1,
+                "say": 1,
+                "the": 1,
+                "juri": 1
+              }
+            },
+            "featuresToIntent": {
+              "lexia": [
+                "bleda",
+                "greetings_for_me",
+                "grateful"
+              ],
+              "we": [
+                "bleda"
+              ],
+              "are": [
+                "bleda"
+              ],
+              "present": [
+                "bleda",
+                "greetings"
+              ],
+              "our": [
+                "bleda"
+              ],
+              "lexiland": [
+                "bleda"
+              ],
+              "project": [
+                "bleda"
+              ],
+              "today": [
+                "bleda"
+              ],
+              "for": [
+                "bleda",
+                "greetings"
+              ],
+              "the": [
+                "bleda",
+                "greetings",
+                "grateful"
+              ],
+              "juri": [
+                "bleda",
+                "greetings",
+                "grateful"
+              ],
+              "hello": [
+                "greetings_for_me"
+              ],
+              "yes": [
+                "greetings"
+              ],
+              "you": [
+                "greetings",
+                "grateful"
+              ],
+              "look": [
+                "greetings"
+              ],
+              "veri": [
+                "greetings"
+              ],
+              "good": [
+                "greetings"
+              ],
+              "can": [
+                "greetings"
+              ],
+              "pleas": [
+                "greetings"
+              ],
+              "yourself": [
+                "greetings"
+              ],
+              "do": [
+                "grateful"
+              ],
+              "have": [
+                "grateful"
+              ],
+              "anyth": [
+                "grateful"
+              ],
+              "to": [
+                "grateful"
+              ],
+              "say": [
+                "grateful"
+              ]
+            },
+            "neuralNetwork": {
+              "settings": {
+                "locale": "en",
+                "tag": "nlu-en",
+                "keepStopwords": true,
+                "nonefeatureValue": 1,
+                "nonedeltaMultiplier": 1.2,
+                "spellCheck": false,
+                "spellCheckDistance": 1,
+                "filterZeros": true,
+                "log": true
+              },
+              "features": [
+                "lexia",
+                "we",
+                "are",
+                "present",
+                "our",
+                "lexiland",
+                "project",
+                "today",
+                "for",
+                "the",
+                "juri",
+                "hello",
+                "yes",
+                "you",
+                "look",
+                "veri",
+                "good",
+                "can",
+                "pleas",
+                "yourself",
+                "do",
+                "have",
+                "anyth",
+                "to",
+                "say"
+              ],
+              "intents": [
+                "bleda",
+                "greetings_for_me",
+                "greetings",
+                "grateful"
+              ],
+              "perceptrons": [
+                [
+                  0.6344214677810669,
+                  1.7317051887512207,
+                  1.7317051887512207,
+                  1.0631016492843628,
+                  1.7317051887512207,
+                  1.7317051887512207,
+                  1.7317051887512207,
+                  1.7317051887512207,
+                  1.0631016492843628,
+                  0.5722095370292664,
+                  0.5722095370292664,
+                  -0.6054611802101135,
+                  -0.5088350772857666,
+                  -1.0504661798477173,
+                  -0.5088350772857666,
+                  -0.5088350772857666,
+                  -0.5088350772857666,
+                  -0.5088350772857666,
+                  -0.5088350772857666,
+                  -0.5088350772857666,
+                  -0.38511914014816284,
+                  -0.38511914014816284,
+                  -0.38511914014816284,
+                  -0.38511914014816284,
+                  -0.38511914014816284,
+                  -0.017475519220093296
+                ],
+                [
+                  5.077316761016846,
+                  -0.5724732279777527,
+                  -0.5724732279777527,
+                  -0.639624834060669,
+                  -0.5724732279777527,
+                  -0.5724732279777527,
+                  -0.5724732279777527,
+                  -0.5724732279777527,
+                  -0.639624834060669,
+                  -1.4220308065414429,
+                  -1.4220308065414429,
+                  6.398914813995361,
+                  -0.04691551253199577,
+                  -0.8443527817726135,
+                  -0.04691551253199577,
+                  -0.04691551253199577,
+                  -0.04691551253199577,
+                  -0.04691551253199577,
+                  -0.04691551253199577,
+                  -0.04691551253199577,
+                  -0.7772014141082764,
+                  -0.7772014141082764,
+                  -0.7772014141082764,
+                  -0.7772014141082764,
+                  -0.7772014141082764,
+                  2.508537768302871
+                ],
+                [
+                  -1.057572364807129,
+                  -0.49508804082870483,
+                  -0.49508804082870483,
+                  0.8812253475189209,
+                  -0.49508804082870483,
+                  -0.49508804082870483,
+                  -0.49508804082870483,
+                  -0.49508804082870483,
+                  0.8812253475189209,
+                  0.34887129068374634,
+                  0.34887129068374634,
+                  -0.0022490997798740864,
+                  1.5220955610275269,
+                  0.9897572994232178,
+                  1.5220955610275269,
+                  1.5220955610275269,
+                  1.5220955610275269,
+                  1.5220955610275269,
+                  1.5220955610275269,
+                  1.5220955610275269,
+                  -0.4057927429676056,
+                  -0.4057927429676056,
+                  -0.4057927429676056,
+                  -0.4057927429676056,
+                  -0.4057927429676056,
+                  0.17263344399486727
+                ],
+                [
+                  0.6863850951194763,
+                  -0.41494157910346985,
+                  -0.41494157910346985,
+                  -0.9150063395500183,
+                  -0.41494157910346985,
+                  -0.41494157910346985,
+                  -0.41494157910346985,
+                  -0.41494157910346985,
+                  -0.9150063395500183,
+                  0.9823065996170044,
+                  0.9823065996170044,
+                  -0.7655647397041321,
+                  -0.36651644110679626,
+                  1.5274184942245483,
+                  -0.36651644110679626,
+                  -0.36651644110679626,
+                  -0.36651644110679626,
+                  -0.36651644110679626,
+                  -0.36651644110679626,
+                  -0.36651644110679626,
+                  2.0002713203430176,
+                  2.0002713203430176,
+                  2.0002713203430176,
+                  2.0002713203430176,
+                  2.0002713203430176,
+                  0.10606237907208914
+                ]
+              ]
+            }
+          }
+        }
+      }
+    },
+    "intentDomains": {},
+    "extraSentences": [
+      [
+        "en",
+        "Lexia we're presenting our LexiLand project today for the jury"
+      ],
+      [
+        "en",
+        "Hello Lexia"
+      ],
+      [
+        "en",
+        "Yes yes, you look very good! can you please present yourself for the jury?"
+      ],
+      [
+        "en",
+        "Lexia, do you have anything to say to the jury?"
+      ]
+    ]
+  },
+  "ner": {
+    "settings": {
+      "tag": "ner",
+      "entityPreffix": "%",
+      "entitySuffix": "%"
+    },
+    "rules": {}
+  },
+  "nlgManager": {
+    "settings": {
+      "tag": "nlg-manager"
+    },
+    "responses": {
+      "en": {
+        "bleda": [
+          {
+            "answer": "4"
+          }
+        ],
+        "greetings_for_me": [
+          {
+            "answer": "1"
+          }
+        ],
+        "greetings": [
+          {
+            "answer": "2"
+          }
+        ],
+        "grateful": [
+          {
+            "answer": "3"
+          }
+        ]
+      }
+    }
+  },
+  "actionManager": {
+    "settings": {
+      "tag": "action-manager"
+    },
+    "actions": {}
+  },
+  "slotManager": {}
+}
